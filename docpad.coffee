@@ -12,6 +12,10 @@ docpadConfig = {
         pages: ->
             @getCollection("html").findAllLive({isPage:true}, [{filename:1}]).on "add", (model) ->
             	model.setMetaDefaults({layout:"default"})
+    plugins:
+	    ghpages:
+	        deployRemote: 'target'
+	        deployBranch: 'master'
 }
 
 # Export the DocPad Configuration
